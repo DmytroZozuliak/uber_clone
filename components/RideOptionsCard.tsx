@@ -31,6 +31,20 @@ const carsAvailable: CarVariant[] = [
     multiplier: 1.75,
     image: "https://links.papareact.com/7pf"
   }
+  ,
+  {
+    id: "Uber-LUX1",
+    title: "Uber LUX1",
+    multiplier: 1.75,
+    image: "https://links.papareact.com/7pf"
+  }
+  ,
+  {
+    id: "Uber-LUX2",
+    title: "Uber LUX2",
+    multiplier: 1.75,
+    image: "https://links.papareact.com/7pf"
+  }
 ]
 
 const RideOptionsCard = () => {
@@ -38,7 +52,7 @@ const RideOptionsCard = () => {
   const [selectedCar, setSelectedCar] = useState<CarVariant | null>(null)
 
   return (
-    <SafeAreaView className='bg-white flex-grow'>
+    <SafeAreaView className='bg-white flex-1'>
       <View>
         <TouchableOpacity className='absolute z-20 top-3 left-5 p-3 rounded-full'
           onPress={() => navigation.goBack()}
@@ -69,11 +83,9 @@ const RideOptionsCard = () => {
           </TouchableOpacity>
         )}
       />
-      <View>
-        <TouchableOpacity disabled={!selectedCar} className={`bg-black py-3 m-3 ${!selectedCar && "bg-gray-300"}`}>
-          <Text className='text-center text-white text-xl'>Choose {selectedCar?.title}</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity disabled={!selectedCar} className={`bg-black py-3 m-3 ${!selectedCar && "bg-gray-300"}`}>
+        <Text className='text-center text-white text-xl'>Choose {selectedCar?.title}</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   )
 }
