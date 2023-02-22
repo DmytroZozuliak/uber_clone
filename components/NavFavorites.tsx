@@ -1,4 +1,4 @@
-import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
 import { Point } from 'react-native-google-places-autocomplete';
 // import { Icon } from '@rneui/base';
@@ -32,14 +32,35 @@ const favorites: FavoritePlace[] = [
   },
   {
     id: "3",
-    description: "Central bus station",
+    description: "Central bus1 station",
     icon: "cafe",
     location: { lat: 50.406358, lng: 30.519482 },
     destination: "пр-т.Науки 1, Київ"
   },
   {
     id: "4",
-    description: "Central bus station",
+    description: "Central bus2 station",
+    icon: "cafe",
+    location: { lat: 50.406358, lng: 30.519482 },
+    destination: "пр-т.Науки 1, Київ"
+  },
+  {
+    id: "5",
+    description: "Central bus3 station",
+    icon: "cafe",
+    location: { lat: 50.406358, lng: 30.519482 },
+    destination: "пр-т.Науки 1, Київ"
+  },
+  {
+    id: "6",
+    description: "Central bus4 station",
+    icon: "cafe",
+    location: { lat: 50.406358, lng: 30.519482 },
+    destination: "пр-т.Науки 1, Київ"
+  },
+  {
+    id: "7",
+    description: "Central bus5 station",
     icon: "cafe",
     location: { lat: 50.406358, lng: 30.519482 },
     destination: "пр-т.Науки 1, Київ"
@@ -59,9 +80,7 @@ const NavFavorites = ({ options }: NavFavoritesProps) => {
   return (
     <FlatList
       data={favorites}
-      // horizontal
       showsVerticalScrollIndicator={false}
-      // showsHorizontalScrollIndicator={false}
       keyExtractor={item => item.id}
       ItemSeparatorComponent={() => (<View
         className='bg-gray-200' style={{ height: 0.5 }} />)}

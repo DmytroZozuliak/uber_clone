@@ -1,4 +1,4 @@
-import { Image, SafeAreaView, Text, View } from 'react-native'
+import { FlatList, Image, SafeAreaView, ScrollView, Text, View } from 'react-native'
 import React from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { GOOGLE_MAPS_APIKEY } from "@env";
@@ -7,12 +7,14 @@ import { useTypedDispatch } from '../hooks/redux';
 import { navActions } from '../store/reducers/navSlice';
 import NavFavorites from '../components/NavFavorites';
 
+const data = Array.from({ length: 30 }, (_, ind) => ind)
+
 const HomeScreen = () => {
   const dispatch = useTypedDispatch()
 
   return (
-    <SafeAreaView className="bg-white flex-1"  >
-      <View className='p-5'>
+    <SafeAreaView className="bg-green-200 flex-1 ">
+      <View className="p-5 bg-white">
         <Image
           style={{
             width: 100,
@@ -45,10 +47,16 @@ const HomeScreen = () => {
           }}
         />
         <NavOptions />
-
-        <NavFavorites options='origin' />
+      </View >
+      <View className='flex-shrink p-5'>
+        <FlatList
+          data={data} keyExtractor={item => item.toString()}
+          renderItem={({ item }) => (<Text>{item}</Text>)}
+        />
       </View>
-    </SafeAreaView>
+
+      {/* <NavFavorites options='origin' /> */}
+    </SafeAreaView >
   )
 }
 

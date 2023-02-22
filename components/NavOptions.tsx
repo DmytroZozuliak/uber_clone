@@ -25,7 +25,7 @@ const data: Route[] = [
     title: 'Order food',
     image: "https://links.papareact.com/28w",
     screen: "EatsScreen"
-  },
+  }
 ]
 
 
@@ -41,7 +41,7 @@ const NavOptions = () => {
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <TouchableOpacity
-          className='p-2 pl-6 pb-8 pt-4 bg-gray-200 m-2 w-40'
+          className='p-2 pl-6 pb-6 pt-4 bg-gray-200 m-2 w-40'
           disabled={!origin}
           onPress={() => navigation.navigate(item.screen)}
         >
@@ -52,7 +52,6 @@ const NavOptions = () => {
             />
             <Text className='mt-2 text-lg font-semibold'>{item.title}</Text>
             <View className='p-2 bg-black rounded-full w-10 mt-4'>
-
               <Icon
                 type='antdesign'
                 name='arrowright'
