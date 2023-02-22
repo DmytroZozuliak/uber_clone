@@ -13,8 +13,8 @@ const HomeScreen = () => {
   const dispatch = useTypedDispatch()
 
   return (
-    <SafeAreaView className="bg-green-200 flex-1 ">
-      <View className="p-5 bg-white">
+    <SafeAreaView className="bg-white flex-1 ">
+      <View className="p-5" >
         <Image
           style={{
             width: 100,
@@ -48,14 +48,14 @@ const HomeScreen = () => {
         />
         <NavOptions />
       </View >
-      <View className='flex-shrink p-5'>
+      {/* <View className='flex-shrink p-5'>
         <FlatList
           data={data} keyExtractor={item => item.toString()}
           renderItem={({ item }) => (<Text>{item}</Text>)}
         />
-      </View>
+      </View> */}
 
-      {/* <NavFavorites options='origin' /> */}
+      <NavFavorites options='origin' />
     </SafeAreaView >
   )
 }

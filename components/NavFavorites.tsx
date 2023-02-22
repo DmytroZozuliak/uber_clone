@@ -37,36 +37,6 @@ const favorites: FavoritePlace[] = [
     location: { lat: 50.406358, lng: 30.519482 },
     destination: "пр-т.Науки 1, Київ"
   },
-  {
-    id: "4",
-    description: "Central bus2 station",
-    icon: "cafe",
-    location: { lat: 50.406358, lng: 30.519482 },
-    destination: "пр-т.Науки 1, Київ"
-  },
-  {
-    id: "5",
-    description: "Central bus3 station",
-    icon: "cafe",
-    location: { lat: 50.406358, lng: 30.519482 },
-    destination: "пр-т.Науки 1, Київ"
-  },
-  {
-    id: "6",
-    description: "Central bus4 station",
-    icon: "cafe",
-    location: { lat: 50.406358, lng: 30.519482 },
-    destination: "пр-т.Науки 1, Київ"
-  },
-  {
-    id: "7",
-    description: "Central bus5 station",
-    icon: "cafe",
-    location: { lat: 50.406358, lng: 30.519482 },
-    destination: "пр-т.Науки 1, Київ"
-  },
-
-
 ]
 
 interface NavFavoritesProps {

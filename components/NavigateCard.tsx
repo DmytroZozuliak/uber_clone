@@ -1,10 +1,12 @@
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import { useTypedDispatch } from '../hooks/redux'
 import { useTypedNavigation } from '../hooks/navigation'
 import { navActions } from '../store/reducers/navSlice'
 import { GOOGLE_MAPS_APIKEY } from '@env'
+import { Icon } from '@rneui/themed';
+
 import NavFavorites from './NavFavorites'
 
 const NavigateCard = () => {
@@ -13,6 +15,14 @@ const NavigateCard = () => {
 
   return (
     <SafeAreaView className='bg-white flex-1'>
+      <TouchableOpacity className='absolute z-20 top-3 left-5 p-3 rounded-full'
+        onPress={() => navigation.goBack()}
+      >
+        <Icon
+          type='fontawesome'
+          name="chevron-left"
+        />
+      </TouchableOpacity>
       <Text className='text-center py-5 text-xl font-sem'>Have a nice day!</Text>
       <View className='border-t border-gray-200 flex-shrink'>
         <View>
